@@ -10,10 +10,4 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-cloudinary.api.create_upload_preset({
-  name: "online-shop",
-  folder: "products",
-  allowed_formats: "jpg, png, jpeg",
-});
-
 module.exports = cloudinary;
