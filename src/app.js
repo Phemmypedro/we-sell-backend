@@ -9,8 +9,16 @@ require("dotenv").config();
 
 const app = express();
 
+const corsOptions = {
+  origin: "https://we-sell-five.vercel.app",
+  methods: "GET, HEAD, POST",
+  preflightContinue: false,
+  optionSuccessStatus: 204,
+  credentials: true,
+};
+
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use("/api/register", register);
 app.use("/api/login", login);
